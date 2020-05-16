@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  script: cp -r $SRC_DIR/ $PREFIX/
+  script: cp -r $SRC_DIR/* $PREFIX/
 
 about:
   home: https://github.com/matusnovak/doxybook2/
