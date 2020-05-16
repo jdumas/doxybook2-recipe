@@ -4,12 +4,14 @@ on: [push]
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
     - name: publish-to-conda
-      uses: fcakyon/conda-publish-action@v1.3
+      uses: maxibor/conda-package-publish-action@v1.1
       with:
-        subdir: 'conda'
-        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-        platforms: 'win oxs linux'
+        subDir: 'conda'
+        AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
