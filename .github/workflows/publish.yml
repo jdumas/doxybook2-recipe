@@ -23,5 +23,5 @@ jobs:
         shell: bash -l {0}
         run: |
           conda build --output-folder build recipe
-          export ANACONDA_API_TOKEN=$INPUT_ANACONDATOKEN
+          export ANACONDA_API_TOKEN=${{ secrets.ANACONDA_TOKEN }}
           anaconda upload --label main build/*/*.tar.bz2
