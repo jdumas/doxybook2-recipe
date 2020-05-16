@@ -1,0 +1,5 @@
+name: anaconda-client-env
+dependencies:
+  - black
+  - conda-build
+  - anaconda-client
