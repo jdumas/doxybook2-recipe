@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  script: python -c "from distutils.dir_util import copy_tree; copy_tree(\"{{ SRC_DIR }}\", \"{{ PREFIX }}\")"
+  script: python -c "from distutils.dir_util import copy_tree; import os; copy_tree(os.getenv('SRC_DIR'), os.getenv('PREFIX'))"
 
 about:
   home: https://github.com/matusnovak/doxybook2/
