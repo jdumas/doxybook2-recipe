@@ -2,4 +2,5 @@ name: anaconda-client-env
 dependencies:
   - black
   - conda-build
+  - conda-verify
   - anaconda-client
